@@ -7,15 +7,19 @@ __car (Compile And Run)__ 能帮助你用一条命令编译并运行单个的C++
 ## 使用
 
 ```bash
-export PATH=$PATH:/home/the/parking/lot/car
-# Add where the script is to PATH, just for looking neat
-car mySolutionToTheHardProblem.cpp
+cd car
+chmod +x car.sh
+# Give executing permission
+export PATH=$PATH:$(pwd)
+# Add into PATH, just for looking neat
+
+car.sh p10086.cpp
 # The code will be compiled and run, without an a.out left in your folder
-car mySolutionToTheHardProblem.cpp
+car.sh p10086.cpp
 # If you run the same code twice it will skip the compiling
-nano mySolutionToTheHardProblem.cpp
+nano p10086.cpp
 # Do some edits (nano is the best text editor)
-car mySolutionToTheHardProblem.cpp
+car.sh p10086.cpp
 # Then it will compile again
 ```
 
