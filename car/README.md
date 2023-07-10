@@ -1,31 +1,31 @@
 # car
 
-  *It runs fast.*
+_It runs fast._
 
-__car (Compile And Run)__ 能帮助你用一条命令编译并运行单个的C++程序，同时能够整理好生成的可执行文件，并附带缓存机制。
+**car (Compile And Run)** 能帮助你用一条命令编译并运行单个的 C++程序，同时能够整理好生成的可执行文件，并附带缓存机制。
 
 ## 使用
 
 ```bash
 cd car
 chmod +x car.sh
-# Give executing permission
+# 赋予执行权限
 export PATH=$PATH:$(pwd)
-# Add into PATH, just for looking neat
+# 添加进PATH环境变量以便调用
 
 car.sh p10086.cpp
-# The code will be compiled and run, without an a.out left in your folder
+# 自动编译并运行代码，并且在程序退出后自动清理二进制程序文件
 car.sh p10086.cpp
-# If you run the same code twice it will skip the compiling
+# 多次运行同一份代码会跳过编译，直接复制之前的编译结果并运行
 nano p10086.cpp
-# Do some edits (nano is the best text editor)
+# 编辑一下
 car.sh p10086.cpp
-# Then it will compile again
+# 此时又会重新编译
 ```
 
 ## 缓存
 
-所有编译后得到的二进制程序文件都保存在`~/.car_cache`中，按源代码文件的md5值命名。如果不想让磁盘空间被塞爆的话请定期清理：
+所有编译后得到的二进制程序文件都保存在`~/.car_cache`中，按源代码文件的 md5 值命名。如果不想让磁盘空间被塞爆的话请定期清理：
 
 ```bash
 rm -r ~/.car_cache
@@ -33,4 +33,5 @@ rm -r ~/.car_cache
 
 ## 注意事项
 
-本脚本含一定量的L，自尊心脆弱者慎用。
+- 默认编译选项：`-O2 -Wall -Wno-unused-result`
+- 本脚本含一定量的 L，自尊心脆弱者慎用。
